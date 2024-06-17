@@ -1,6 +1,6 @@
 import { FlatList } from "react-native";
 import React from "react";
-import { type Place } from "models/Place";
+import { type Place } from "@/models/Place";
 import PlaceItem from "./PlaceItem";
 
 interface PlacesListProps {

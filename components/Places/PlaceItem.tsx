@@ -1,4 +1,4 @@
-import { type Place } from "models/Place";
+import { type Place } from "@/models/Place";
 import { Pressable } from "react-native";
 import { Image, Text, View } from "tamagui";
 
