@@ -8,8 +8,11 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { useFonts } from "expo-font";
-import { SplashScreen, Stack } from "expo-router";
+import { router, SplashScreen, Stack } from "expo-router";
 import { Provider } from "./Provider";
+import { Button } from "tamagui";
+import { Plus } from "@tamagui/lucide-icons";
+import { colors } from "@/constants/Colors";
 
 export {
   // Catch any errors thrown by the Layout component.
@@ -50,17 +53,39 @@ function RootLayoutNav() {
   return (
     <Provider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <Stack>
+        <Stack
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: colors.primary500,
+            },
+            headerTintColor: colors.gray700,
+            contentStyle: {
+              backgroundColor: colors.gray700,
+            },
+          }}
+        >
           <Stack.Screen
             name="index"
             options={{
-              title: "All Places",
+              title: "Your Favorite Places",
+              headerRight: ({ tintColor }) => {
+                return (
+                  <Button
+                    icon={Plus}
+                    scaleIcon={1.5}
+                    color={tintColor}
+                    chromeless
+                    onPress={() => router.push("AddPlace")}
+                  />
+                );
+              },
             }}
           />
           <Stack.Screen
             name="AddPlace"
             options={{
-              title: "Add Place",
+              title: "Add a New Place",
+              headerBackTitle: "All Places",
             }}
           />
           <Stack.Screen
