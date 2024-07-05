@@ -27,7 +27,16 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": ["expo-router", "expo-font"],
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "The app needs access to your camera in order to take pictures of your favorite places"
+        }
+      ]
+    ],
     "experiments": {
       "typedRoutes": true
     }
