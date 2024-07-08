@@ -1,6 +1,7 @@
 import { colors } from "@/constants/Colors";
 import { useState } from "react";
 import { Form, Input, Label, ScrollView, Text, View } from "tamagui";
+import ImagePicker from "./ImagePicker";
 
 const PlaceForm = () => {
   const [enteredTitle, setEnteredTitle] = useState<string>();
@@ -25,6 +26,7 @@ const PlaceForm = () => {
           value={enteredTitle}
         />
       </Form>
+      <ImagePicker />
     </ScrollView>
   );
 };
